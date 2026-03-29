@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAAIAN — Ahmed Rguibi | PMO / Chef de Projet Senior</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Epilogue:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --black: #0C0C0C;
+    --dark: #111111;
+    --mid: #1C1C1C;
+    --border: #2A2A2A;
+    --muted: #5A5A5A;
+    --light: #A8A8A8;
+    --white: #F4F1EC;
+    --accent: #C4A96A;
+    --accent-dim: rgba(196,169,106,0.12);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--black);
+    color: var(--white);
+    font-family: 'Epilogue', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px 48px;
+    background: rgba(12,12,12,0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--white); }
+
+  .nav-cta {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--accent);
+    padding: 10px 24px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .nav-cta:hover { opacity: 0.85; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 48px 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg-line {
+    position: absolute;
+    top: 0; right: 120px;
+    width: 1px;
+    height: 100%;
+    background: var(--border);
+    opacity: 0.6;
+  }
+
+  .hero-bg-line-2 {
+    position: absolute;
+    top: 0; right: 380px;
+    width: 1px;
+    height: 100%;
+    background: var(--border);
+    opacity: 0.3;
+  }
+
+  .hero-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.2s forwards;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(52px, 7vw, 100px);
+    font-weight: 300;
+    line-height: 1.0;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    max-width: 820px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.4s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .hero-sub {
+    margin-top: 40px;
+    font-size: 16px;
+    font-weight: 300;
+    color: var(--light);
+    max-width: 520px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.6s forwards;
+  }
+
+  .hero-actions {
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    opacity: 0;
+    animation: fadeUp 0.8s ease 0.8s forwards;
+  }
+
+  .btn-primary {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--black);
+    background: var(--accent);
+    padding: 16px 36px;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover { opacity: 0.85; }
+
+  .btn-ghost {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--light);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .btn-ghost:hover { color: var(--white); border-color: var(--light); }
+
+  /* ── PROOF STRIP ── */
+  #proof {
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 36px 48px;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    overflow: hidden;
+  }
+
+  .proof-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    white-space: nowrap;
+    padding-right: 48px;
+    border-right: 1px solid var(--border);
+    margin-right: 48px;
+    flex-shrink: 0;
+  }
+
+  .proof-logos {
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+
+  .proof-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--muted);
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .proof-name:hover { color: var(--light); }
+
+  /* ── STATS ── */
+  #stats {
+    padding: 100px 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .stat-cell {
+    background: var(--black);
+    padding: 48px 40px;
+  }
+
+  .stat-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    margin-top: 12px;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--light);
+    line-height: 1.6;
+  }
+
+  /* ── SECTION COMMON ── */
+  section { padding: 120px 48px; }
+
+  .section-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 80px;
+    margin-bottom: 80px;
+  }
+
+  .section-index {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    padding-top: 8px;
+    flex-shrink: 0;
+    width: 80px;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--white);
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  /* ── POSITIONING ── */
+  #positioning {
+    border-top: 1px solid var(--border);
+  }
+
+  .positioning-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+    padding-left: 160px;
+  }
+
+  .positioning-text p {
+    font-size: 17px;
+    font-weight: 300;
+    color: var(--light);
+    line-height: 1.85;
+    margin-bottom: 24px;
+  }
+
+  .positioning-text p strong {
+    color: var(--white);
+    font-weight: 500;
+  }
+
+  .positioning-aside {
+    border-left: 1px solid var(--border);
+    padding-left: 48px;
+  }
+
+  .signal-list {
+    list-style: none;
+  }
+
+  .signal-list li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--light);
+    display: flex;
+    gap: 16px;
+  }
+
+  .signal-list li::before {
+    content: '—';
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  /* ── OFFER ── */
+  #offer {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .offer-grid {
+    padding-left: 160px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 0;
+  }
+
+  .offer-card {
+    background: var(--dark);
+    padding: 48px 40px;
+    position: relative;
+  }
+
+  .offer-card.featured {
+    background: var(--mid);
+  }
+
+  .offer-tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+    display: block;
+  }
+
+  .offer-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+
+  .offer-desc {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--light);
+    line-height: 1.75;
+    margin-bottom: 32px;
+  }
+
+  .offer-deliverables {
+    list-style: none;
+    margin-bottom: 32px;
+  }
+
+  .offer-deliverables li {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--light);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    gap: 10px;
+  }
+
+  .offer-deliverables li::before {
+    content: '↗';
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+
+  .offer-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    color: var(--accent);
+  }
+
+  .offer-price-label {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ── FOR WHO ── */
+  #audience {
+    border-top: 1px solid var(--border);
+  }
+
+  .audience-grid {
+    padding-left: 160px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .audience-card {
+    background: var(--black);
+    padding: 48px;
+  }
+
+  .audience-card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .audience-card-sub {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 28px;
+  }
+
+  .audience-card p {
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--light);
+    line-height: 1.75;
+  }
+
+  /* ── METHOD ── */
+  #method {
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+  }
+
+  .method-steps {
+    padding-left: 160px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .method-step {
+    background: var(--dark);
+    padding: 36px 28px;
+    position: relative;
+  }
+
+  .method-letter {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .method-word {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .method-desc {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── CTA ── */
+  #contact {
+    border-top: 1px solid var(--border);
+    padding: 120px 48px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .cta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(40px, 5vw, 68px);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+  }
+
+  .cta-title em {
+    font-style: italic;
+    color: var(--accent);
+  }
+
+  .cta-body p {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--light);
+    line-height: 1.8;
+    margin-bottom: 20px;
+  }
+
+  .cta-body p strong { color: var(--white); font-weight: 500; }
+
+  .cta-actions {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cta-info {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--muted);
+    letter-spacing: 0.06em;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 36px 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+  }
+
+  .footer-links a {
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--light); }
+
+  .footer-legal {
+    font-size: 11px;
+    color: var(--muted);
+  }
+
+  /* ── DIVIDER LINE ── */
+  .h-rule {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0 48px;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 20px 24px; }
+    nav .nav-links { display: none; }
+    #hero { padding: 0 24px 60px; }
+    #proof { padding: 28px 24px; flex-direction: column; gap: 20px; }
+    .proof-label { border-right: none; margin-right: 0; padding-right: 0; border-bottom: 1px solid var(--border); padding-bottom: 16px; }
+    #stats { grid-template-columns: 1fr 1fr; padding: 0; }
+    section { padding: 80px 24px; }
+    .section-header { flex-direction: column; gap: 16px; margin-bottom: 48px; }
+    .section-index { width: auto; }
+    .positioning-grid { grid-template-columns: 1fr; padding-left: 0; gap: 40px; }
+    .positioning-aside { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 32px; }
+    .offer-grid { grid-template-columns: 1fr; padding-left: 0; }
+    .audience-grid { grid-template-columns: 1fr; padding-left: 0; }
+    .method-steps { grid-template-columns: repeat(3, 1fr); padding-left: 0; }
+    #contact { grid-template-columns: 1fr; gap: 40px; padding: 80px 24px; }
+    footer { flex-direction: column; gap: 20px; padding: 28px 24px; text-align: center; }
+    .footer-links { flex-wrap: wrap; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#hero" class="nav-logo">MAAIAN</a>
+  <ul class="nav-links">
+    <li><a href="#positioning">Approche</a></li>
+    <li><a href="#offer">Offres</a></li>
+    <li><a href="#audience">Pour qui</a></li>
+    <li><a href="#method">Méthode</a></li>
+  </ul>
+  <a href="https://calendly.com/a-rguibi-maaian/30min" target="_blank" class="nav-cta">Réserver 30 min</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg-line"></div>
+  <div class="hero-bg-line-2"></div>
+
+  <p class="hero-eyebrow">Ahmed Rguibi — PMO / Chef de Projet Senior</p>
+
+  <h1 class="hero-title">
+    Auditer, structurer,<br>
+    <em>livrer.</em>
+  </h1>
+
+  <p class="hero-sub">
+    16 ans d'expérience en pilotage de programmes IT complexes.
+    Rothschild Martin Maurel. Allianz. Checkpoint Systems.
+    Disponible en mission — Île-de-France.
+  </p>
+
+  <div class="hero-actions">
+    <a href="https://calendly.com/a-rguibi-maaian/30min" target="_blank" class="btn-primary">Échanger 30 minutes</a>
+    <a href="#offer" class="btn-ghost">Voir les offres</a>
+  </div>
+</section>
+
+<!-- ── PROOF STRIP ── -->
+<div id="proof">
+  <span class="proof-label">Références</span>
+  <div class="proof-logos">
+    <span class="proof-name">Rothschild Martin Maurel</span>
+    <span class="proof-name">Allianz</span>
+    <span class="proof-name">Checkpoint Systems</span>
+    <span class="proof-name">Picard</span>
+    <span class="proof-name">Carrefour</span>
+    <span class="proof-name">Decathlon</span>
+  </div>
+</div>
+
+<!-- ── STATS ── -->
+<div id="stats">
+  <div class="stat-cell reveal">
+    <span class="stat-number">16</span>
+    <p class="stat-label">ans d'expérience en pilotage de projets IT</p>
+  </div>
+  <div class="stat-cell reveal">
+    <span class="stat-number">20+</span>
+    <p class="stat-label">projets B2B conduits en parallèle chez Checkpoint Systems</p>
+  </div>
+  <div class="stat-cell reveal">
+    <span class="stat-number">FR/EN</span>
+    <p class="stat-label">bilingue — missions France et contextes internationaux</p>
+  </div>
+  <div class="stat-cell reveal">
+    <span class="stat-number">PMO</span>
+    <p class="stat-label">PRINCE2 certifié — Atlassian (Jira, Confluence) certifié 2024</p>
+  </div>
+</div>
+
+<!-- ── POSITIONING ── -->
+<section id="positioning">
+  <div class="section-header">
+    <span class="section-index">01</span>
+    <h2 class="section-title">Ce que<br>je fais <em>concrètement</em></h2>
+  </div>
+  <div class="positioning-grid reveal">
+    <div class="positioning-text">
+      <p>
+        J'interviens en mission chez des grands comptes et ETI en Île-de-France, 
+        en qualité de <strong>Chef de Projet Senior ou PMO</strong>, sur des programmes IT 
+        à enjeux : gouvernance transverse, pilotage budgétaire, coordination 
+        multi-équipes, reporting direction.
+      </p>
+      <p>
+        En parallèle, via MAAIAN, je propose des <strong>audits de santé projet</strong> 
+        pour les décideurs IT qui souhaitent avoir une lecture indépendante de 
+        l'état réel de leur portefeuille avant de prendre des décisions.
+      </p>
+      <p>
+        Ce n'est pas du sauvetage de crise. C'est une démarche de gouvernance 
+        préventive — le même réflexe qu'un audit financier ou un audit RGPD, 
+        <strong>appliqué à vos projets stratégiques.</strong>
+      </p>
+    </div>
+    <div class="positioning-aside">
+      <ul class="signal-list">
+        <li>Nouveau poste : vous héritez d'un portefeuille que vous découvrez progressivement</li>
+        <li>Programme en cours : vous voulez une lecture externe avant une revue comité</li>
+        <li>Transformation critique : vous ne pouvez pas vous permettre une dérive silencieuse</li>
+        <li>Mission freelance : vous cherchez un profil PMO Senior disponible immédiatement</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="h-rule">
+
+<!-- ── OFFER ── -->
+<section id="offer" style="padding-top: 100px; padding-bottom: 0;">
+  <div class="section-header">
+    <span class="section-index">02</span>
+    <h2 class="section-title">Trois niveaux<br><em>d'intervention</em></h2>
+  </div>
+</section>
+<div class="offer-grid">
+  <div class="offer-card reveal">
+    <span class="offer-tag">Niveau 1</span>
+    <h3 class="offer-title">Diagnostic Flash</h3>
+    <p class="offer-desc">
+      Un état des lieux rapide de vos projets. 
+      Idéal pour un premier regard externe ou une prise de poste récente.
+    </p>
+    <ul class="offer-deliverables">
+      <li>Scoring sur 12 signaux d'alerte</li>
+      <li>Mini-rapport 1 page avec 3 recommandations</li>
+      <li>Restitution orale 30 min</li>
+    </ul>
+    <p class="offer-price">Gratuit</p>
+    <p class="offer-price-label">2h — confidentiel — sans engagement</p>
+  </div>
+
+  <div class="offer-card featured reveal">
+    <span class="offer-tag">Niveau 2 — Recommandé</span>
+    <h3 class="offer-title">Audit Complet</h3>
+    <p class="offer-desc">
+      Analyse approfondie du portefeuille. 
+      Cartographie des risques, scoring par projet, recommandations priorisées.
+    </p>
+    <ul class="offer-deliverables">
+      <li>Entretiens équipes + revue documentaire</li>
+      <li>Rapport structuré 30-40 pages</li>
+      <li>Présentation executive (15 slides)</li>
+      <li>Plan d'action priorisé</li>
+    </ul>
+    <p class="offer-price">2 500 — 4 500 € HT</p>
+    <p class="offer-price-label">2-3 jours sur site · Rapport sous 48h</p>
+  </div>
+
+  <div class="offer-card reveal">
+    <span class="offer-tag">Niveau 3</span>
+    <h3 class="offer-title">Accompagnement Opérationnel</h3>
+    <p class="offer-desc">
+      Intervention directe sur un projet identifié. 
+      Réalignement des parties prenantes, plan de relance, pilotage.
+    </p>
+    <ul class="offer-deliverables">
+      <li>Plan de réalignement et de relance</li>
+      <li>Tableau de pilotage dédié</li>
+      <li>Rapports de suivi hebdomadaires</li>
+      <li>Feuille de route redressement</li>
+    </ul>
+    <p class="offer-price">20 000 — 60 000 € HT</p>
+    <p class="offer-price-label">2 à 6 mois · sur devis</p>
+  </div>
+</div>
+<div style="padding-bottom: 100px; background: var(--dark);"></div>
+
+<!-- ── AUDIENCE ── -->
+<section id="audience">
+  <div class="section-header">
+    <span class="section-index">03</span>
+    <h2 class="section-title">À qui<br>je m'adresse <em>précisément</em></h2>
+  </div>
+</section>
+<div class="audience-grid" style="margin-top: -48px;">
+  <div class="audience-card reveal">
+    <h3 class="audience-card-title">Nouveaux DSI / CTO / CPO</h3>
+    <p class="audience-card-sub">Prise de poste récente · 0-6 mois</p>
+    <p>
+      Vous héritez d'un portefeuille de projets dont vous découvrez progressivement l'état réel. 
+      Un audit des 100 premiers jours vous donne une baseline factuelle avant vos premières décisions stratégiques 
+      — et une lecture claire à présenter à votre direction.
+    </p>
+  </div>
+  <div class="audience-card reveal">
+    <h3 class="audience-card-title">Directeurs de Programme</h3>
+    <p class="audience-card-sub">Programmes en cours · Enjeux >500K€</p>
+    <p>
+      Vous pilotez un ou plusieurs programmes critiques et souhaitez un regard externe indépendant 
+      avant un comité stratégique ou une revue de direction. 
+      Je produis une analyse factuelle, sans parti pris interne.
+    </p>
+  </div>
+  <div class="audience-card reveal">
+    <h3 class="audience-card-title">Ingénieurs d'affaires ESN</h3>
+    <p class="audience-card-sub">Missions régie · IDF · Disponible</p>
+    <p>
+      Vous cherchez un profil PMO Senior ou Chef de Projet IT pour placer 
+      chez un client grand compte. Rothschild Martin Maurel, Allianz, 16 ans d'expérience, 
+      PRINCE2 certifié, bilingue FR/EN. TJM selon contexte mission.
+    </p>
+  </div>
+  <div class="audience-card reveal">
+    <h3 class="audience-card-title">Chefs de Projet</h3>
+    <p class="audience-card-sub">Signal faible · Besoin de recul</p>
+    <p>
+      Vous sentez que votre projet accumule des tensions qui ne remontent pas encore 
+      au comité de pilotage. Le diagnostic flash gratuit (2h) permet d'identifier les signaux 
+      critiques et de décider si une escalade est nécessaire.
+    </p>
+  </div>
+</div>
+
+<!-- ── METHOD ── -->
+<section id="method" style="padding-bottom: 0;">
+  <div class="section-header">
+    <span class="section-index">04</span>
+    <h2 class="section-title">La méthode<br><em>M.A.A.I.A.N.</em></h2>
+  </div>
+</section>
+<div class="method-steps reveal" style="background: var(--dark);">
+  <div class="method-step">
+    <span class="method-letter">M</span>
+    <span class="method-word">Mapping</span>
+    <p class="method-desc">Diagnostic de l'état réel. Entretiens, revue documentaire, identification des zones de risque.</p>
+  </div>
+  <div class="method-step">
+    <span class="method-letter">A</span>
+    <span class="method-word">Alignement</span>
+    <p class="method-desc">Réalignement des parties prenantes. Clarification des rôles, attentes, et priorités.</p>
+  </div>
+  <div class="method-step">
+    <span class="method-letter">A</span>
+    <span class="method-word">Actions</span>
+    <p class="method-desc">Quick wins identifiés dès la phase 1. Résultats visibles en moins de deux semaines.</p>
+  </div>
+  <div class="method-step">
+    <span class="method-letter">I</span>
+    <span class="method-word">Implémentation</span>
+    <p class="method-desc">Plan de relance structuré. Gouvernance rétablie, jalons redéfinis, ressources réallouées.</p>
+  </div>
+  <div class="method-step">
+    <span class="method-letter">A</span>
+    <span class="method-word">Accompagnement</span>
+    <p class="method-desc">Suivi terrain. Reporting régulier, alertes anticipées, coordination continue.</p>
+  </div>
+  <div class="method-step">
+    <span class="method-letter">N</span>
+    <span class="method-word">Normalisation</span>
+    <p class="method-desc">Ancrage des pratiques. Outils de pilotage, routines de gouvernance, autonomie des équipes.</p>
+  </div>
+</div>
+<div style="height: 100px; background: var(--dark);"></div>
+
+<!-- ── CTA ── -->
+<section id="contact">
+  <div class="cta-title">
+    Un échange de<br>
+    <em>30 minutes.</em><br>
+    Sans engagement.
+  </div>
+  <div class="cta-body">
+    <p>
+      Vous êtes en prise de poste, en charge d'un programme critique, 
+      ou vous cherchez un profil PMO Senior pour une mission en régie.
+    </p>
+    <p>
+      <strong>En 30 minutes</strong>, je vous donne une lecture concrète de votre situation 
+      et des repères sur ce qu'une intervention peut apporter dans votre contexte.
+    </p>
+    <p>
+      Échange confidentiel. Pas de pitch commercial.
+    </p>
+    <div class="cta-actions">
+      <a href="https://calendly.com/a-rguibi-maaian/30min" target="_blank" class="btn-primary" style="display: inline-block; width: fit-content;">Réserver un créneau</a>
+      <span class="cta-info">Ou directement : <a href="mailto:a.rguibi@outlook.com" style="color: var(--light); text-decoration: none;">a.rguibi@outlook.com</a> · +33 6 59 34 56 55</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="footer-brand">MAAIAN</span>
+  <ul class="footer-links">
+    <li><a href="mailto:a.rguibi@outlook.com">Contact</a></li>
+    <li><a href="https://www.linkedin.com/in/ahmedrguibi" target="_blank">LinkedIn</a></li>
+    <li><a href="https://www.maaian.fr/en">EN</a></li>
+  </ul>
+  <span class="footer-legal">Ahmed Rguibi — MAAIAN · Île-de-France</span>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
