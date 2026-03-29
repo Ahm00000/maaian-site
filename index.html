@@ -21,7 +21,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -34,7 +33,6 @@
     overflow-x: hidden;
   }
 
-  /* ── NAV ── */
   nav {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -90,7 +88,6 @@
 
   .nav-cta:hover { opacity: 0.85; }
 
-  /* ── HERO ── */
   #hero {
     min-height: 100vh;
     display: flex;
@@ -104,8 +101,7 @@
   .hero-bg-line {
     position: absolute;
     top: 0; right: 120px;
-    width: 1px;
-    height: 100%;
+    width: 1px; height: 100%;
     background: var(--border);
     opacity: 0.6;
   }
@@ -113,8 +109,7 @@
   .hero-bg-line-2 {
     position: absolute;
     top: 0; right: 380px;
-    width: 1px;
-    height: 100%;
+    width: 1px; height: 100%;
     background: var(--border);
     opacity: 0.3;
   }
@@ -142,10 +137,7 @@
     animation: fadeUp 0.8s ease 0.4s forwards;
   }
 
-  .hero-title em {
-    font-style: italic;
-    color: var(--accent);
-  }
+  .hero-title em { font-style: italic; color: var(--accent); }
 
   .hero-sub {
     margin-top: 40px;
@@ -197,7 +189,6 @@
 
   .btn-ghost:hover { color: var(--white); border-color: var(--light); }
 
-  /* ── PROOF STRIP ── */
   #proof {
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
@@ -240,7 +231,6 @@
 
   .proof-name:hover { color: var(--light); }
 
-  /* ── STATS ── */
   #stats {
     padding: 100px 48px;
     display: grid;
@@ -271,7 +261,6 @@
     line-height: 1.6;
   }
 
-  /* ── SECTION COMMON ── */
   section { padding: 120px 48px; }
 
   .section-header {
@@ -300,15 +289,9 @@
     color: var(--white);
   }
 
-  .section-title em {
-    font-style: italic;
-    color: var(--accent);
-  }
+  .section-title em { font-style: italic; color: var(--accent); }
 
-  /* ── POSITIONING ── */
-  #positioning {
-    border-top: 1px solid var(--border);
-  }
+  #positioning { border-top: 1px solid var(--border); }
 
   .positioning-grid {
     display: grid;
@@ -326,19 +309,14 @@
     margin-bottom: 24px;
   }
 
-  .positioning-text p strong {
-    color: var(--white);
-    font-weight: 500;
-  }
+  .positioning-text p strong { color: var(--white); font-weight: 500; }
 
   .positioning-aside {
     border-left: 1px solid var(--border);
     padding-left: 48px;
   }
 
-  .signal-list {
-    list-style: none;
-  }
+  .signal-list { list-style: none; }
 
   .signal-list li {
     padding: 20px 0;
@@ -350,13 +328,8 @@
     gap: 16px;
   }
 
-  .signal-list li::before {
-    content: '—';
-    color: var(--accent);
-    flex-shrink: 0;
-  }
+  .signal-list li::before { content: '—'; color: var(--accent); flex-shrink: 0; }
 
-  /* ── OFFER ── */
   #offer {
     background: var(--dark);
     border-top: 1px solid var(--border);
@@ -366,7 +339,7 @@
   .offer-grid {
     padding-left: 160px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1px;
     background: var(--border);
     margin-top: 0;
@@ -375,12 +348,9 @@
   .offer-card {
     background: var(--dark);
     padding: 48px 40px;
-    position: relative;
   }
 
-  .offer-card.featured {
-    background: var(--mid);
-  }
+  .offer-card.featured { background: var(--mid); }
 
   .offer-tag {
     font-size: 10px;
@@ -424,11 +394,7 @@
     gap: 10px;
   }
 
-  .offer-deliverables li::before {
-    content: '↗';
-    color: var(--accent);
-    flex-shrink: 0;
-  }
+  .offer-deliverables li::before { content: '↗'; color: var(--accent); flex-shrink: 0; }
 
   .offer-price {
     font-family: 'Cormorant Garamond', serif;
@@ -443,10 +409,7 @@
     margin-top: 4px;
   }
 
-  /* ── FOR WHO ── */
-  #audience {
-    border-top: 1px solid var(--border);
-  }
+  #audience { border-top: 1px solid var(--border); }
 
   .audience-grid {
     padding-left: 160px;
@@ -485,7 +448,6 @@
     line-height: 1.75;
   }
 
-  /* ── METHOD ── */
   #method {
     background: var(--dark);
     border-top: 1px solid var(--border);
@@ -502,7 +464,6 @@
   .method-step {
     background: var(--dark);
     padding: 36px 28px;
-    position: relative;
   }
 
   .method-letter {
@@ -532,7 +493,6 @@
     line-height: 1.6;
   }
 
-  /* ── CTA ── */
   #contact {
     border-top: 1px solid var(--border);
     padding: 120px 48px;
@@ -550,10 +510,7 @@
     color: var(--white);
   }
 
-  .cta-title em {
-    font-style: italic;
-    color: var(--accent);
-  }
+  .cta-title em { font-style: italic; color: var(--accent); }
 
   .cta-body p {
     font-size: 15px;
@@ -579,7 +536,6 @@
     letter-spacing: 0.06em;
   }
 
-  /* ── FOOTER ── */
   footer {
     border-top: 1px solid var(--border);
     padding: 36px 48px;
@@ -614,19 +570,10 @@
 
   .footer-links a:hover { color: var(--light); }
 
-  .footer-legal {
-    font-size: 11px;
-    color: var(--muted);
-  }
+  .footer-legal { font-size: 11px; color: var(--muted); }
 
-  /* ── DIVIDER LINE ── */
-  .h-rule {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 0 48px;
-  }
+  .h-rule { border: none; border-top: 1px solid var(--border); margin: 0 48px; }
 
-  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -638,12 +585,8 @@
     transition: opacity 0.7s ease, transform 0.7s ease;
   }
 
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
     nav { padding: 20px 24px; }
     nav .nav-links { display: none; }
@@ -658,7 +601,7 @@
     .positioning-aside { border-left: none; border-top: 1px solid var(--border); padding-left: 0; padding-top: 32px; }
     .offer-grid { grid-template-columns: 1fr; padding-left: 0; }
     .audience-grid { grid-template-columns: 1fr; padding-left: 0; }
-    .method-steps { grid-template-columns: repeat(3, 1fr); padding-left: 0; }
+    .method-steps { grid-template-columns: repeat(2, 1fr); padding-left: 0; }
     #contact { grid-template-columns: 1fr; gap: 40px; padding: 80px 24px; }
     footer { flex-direction: column; gap: 20px; padding: 28px 24px; text-align: center; }
     .footer-links { flex-wrap: wrap; justify-content: center; }
@@ -667,7 +610,6 @@
 </head>
 <body>
 
-<!-- ── NAV ── -->
 <nav>
   <a href="#hero" class="nav-logo">MAAIAN</a>
   <ul class="nav-links">
@@ -679,45 +621,34 @@
   <a href="https://calendly.com/a-rguibi-maaian/30min" target="_blank" class="nav-cta">Réserver 30 min</a>
 </nav>
 
-<!-- ── HERO ── -->
 <section id="hero">
   <div class="hero-bg-line"></div>
   <div class="hero-bg-line-2"></div>
-
   <p class="hero-eyebrow">Ahmed Rguibi — PMO / Chef de Projet Senior</p>
-
-  <h1 class="hero-title">
-    Auditer, structurer,<br>
-    <em>livrer.</em>
-  </h1>
-
+  <h1 class="hero-title">Auditer, structurer,<br><em>livrer.</em></h1>
   <p class="hero-sub">
     16 ans d'expérience en pilotage de programmes IT complexes.
     Rothschild Martin Maurel. Allianz. Checkpoint Systems.
     Disponible en mission — Île-de-France.
   </p>
-
   <div class="hero-actions">
     <a href="https://calendly.com/a-rguibi-maaian/30min" target="_blank" class="btn-primary">Échanger 30 minutes</a>
     <a href="#offer" class="btn-ghost">Voir les offres</a>
   </div>
 </section>
 
-<!-- ── PROOF STRIP ── -->
 <div id="proof">
   <span class="proof-label">Références</span>
   <div class="proof-logos">
     <span class="proof-name">Rothschild Martin Maurel</span>
     <span class="proof-name">Allianz</span>
     <span class="proof-name">Checkpoint Systems</span>
-    <span class="proof-name">Picard</span>
     <span class="proof-name">Carrefour</span>
-    <span class="proof-name">E.Leclerc</span>
-    <span class="proof-name">Sacem</span>
+    <span class="proof-name">Decathlon</span>
+    <span class="proof-name">Leclerc</span>
   </div>
 </div>
 
-<!-- ── STATS ── -->
 <div id="stats">
   <div class="stat-cell reveal">
     <span class="stat-number">16</span>
@@ -733,11 +664,10 @@
   </div>
   <div class="stat-cell reveal">
     <span class="stat-number">PMO</span>
-    <p class="stat-label">PRINCE2 certifié — Atlassian (Jira, Confluence) certifié 2024</p>
+    <p class="stat-label">PRINCE2 certifié — Atlassian Jira & Confluence certifié 2024</p>
   </div>
 </div>
 
-<!-- ── POSITIONING ── -->
 <section id="positioning">
   <div class="section-header">
     <span class="section-index">01</span>
@@ -746,19 +676,19 @@
   <div class="positioning-grid reveal">
     <div class="positioning-text">
       <p>
-        J'interviens en mission chez des grands comptes et ETI en Île-de-France, 
-        en qualité de <strong>Chef de Projet Senior ou PMO</strong>, sur des programmes IT 
-        à enjeux : gouvernance transverse, pilotage budgétaire, coordination 
+        J'interviens en mission chez des grands comptes et ETI en Île-de-France,
+        en qualité de <strong>Chef de Projet Senior ou PMO</strong>, sur des programmes IT
+        à enjeux : gouvernance transverse, pilotage budgétaire, coordination
         multi-équipes, reporting direction.
       </p>
       <p>
-        En parallèle, via MAAIAN, je propose des <strong>audits de santé projet</strong> 
-        pour les décideurs IT qui souhaitent avoir une lecture indépendante de 
+        En parallèle, via MAAIAN, je propose des <strong>audits de santé projet</strong>
+        pour les décideurs IT qui souhaitent avoir une lecture indépendante de
         l'état réel de leur portefeuille avant de prendre des décisions.
       </p>
       <p>
-        Ce n'est pas du sauvetage de crise. C'est une démarche de gouvernance 
-        préventive — le même réflexe qu'un audit financier ou un audit RGPD, 
+        Ce n'est pas du sauvetage de crise. C'est une démarche de gouvernance
+        préventive — le même réflexe qu'un audit financier ou un audit RGPD,
         <strong>appliqué à vos projets stratégiques.</strong>
       </p>
     </div>
@@ -775,36 +705,34 @@
 
 <hr class="h-rule">
 
-<!-- ── OFFER ── -->
-<section id="offer" style="padding-top: 100px; padding-bottom: 0;">
+<section id="offer" style="padding-top: 100px; padding-bottom: 0; background: var(--dark);">
   <div class="section-header">
     <span class="section-index">02</span>
-    <h2 class="section-title">Trois niveaux<br><em>d'intervention</em></h2>
+    <h2 class="section-title">Quatre niveaux<br><em>d'intervention</em></h2>
   </div>
 </section>
 <div class="offer-grid">
   <div class="offer-card reveal">
-    <span class="offer-tag">Niveau 1</span>
+    <span class="offer-tag">Niveau 1 — Gratuit</span>
     <h3 class="offer-title">Diagnostic Flash</h3>
     <p class="offer-desc">
-      Un état des lieux rapide de vos projets. 
-      Idéal pour un premier regard externe ou une prise de poste récente.
+      Un premier regard externe, rapide et confidentiel.
+      Identifier les signaux d'alerte visibles avant toute décision.
     </p>
     <ul class="offer-deliverables">
-      <li>Scoring sur 12 signaux d'alerte</li>
-      <li>Mini-rapport 1 page avec 3 recommandations</li>
-      <li>Restitution orale 30 min</li>
+      <li>Échange structuré sur votre situation</li>
+      <li>Revue des 12 signaux d'alerte critiques</li>
+      <li>3 recommandations prioritaires à l'oral</li>
     </ul>
     <p class="offer-price">Gratuit</p>
-    <p class="offer-price-label">2h — confidentiel — sans engagement</p>
+    <p class="offer-price-label">Confidentiel — sans engagement</p>
   </div>
-
   <div class="offer-card featured reveal">
     <span class="offer-tag">Niveau 2 — Recommandé</span>
-    <h3 class="offer-title">Audit Complet</h3>
+    <h3 class="offer-title">Diagnostic Complet</h3>
     <p class="offer-desc">
-      Analyse approfondie du portefeuille. 
-      Cartographie des risques, scoring par projet, recommandations priorisées.
+      Analyse approfondie du portefeuille.
+      Cartographie des risques, scoring par projet, recommandations priorisées pour la direction.
     </p>
     <ul class="offer-deliverables">
       <li>Entretiens équipes + revue documentaire</li>
@@ -812,16 +740,15 @@
       <li>Présentation executive (15 slides)</li>
       <li>Plan d'action priorisé</li>
     </ul>
-    <p class="offer-price">2 500 — 4 500 € HT</p>
+    <p class="offer-price">Sur devis</p>
     <p class="offer-price-label">2-3 jours sur site · Rapport sous 48h</p>
   </div>
-
   <div class="offer-card reveal">
     <span class="offer-tag">Niveau 3</span>
     <h3 class="offer-title">Accompagnement Opérationnel</h3>
     <p class="offer-desc">
-      Intervention directe sur un projet identifié. 
-      Réalignement des parties prenantes, plan de relance, pilotage.
+      Intervention directe sur un projet identifié.
+      Réalignement des parties prenantes, plan de relance, pilotage terrain.
     </p>
     <ul class="offer-deliverables">
       <li>Plan de réalignement et de relance</li>
@@ -829,13 +756,27 @@
       <li>Rapports de suivi hebdomadaires</li>
       <li>Feuille de route redressement</li>
     </ul>
-    <p class="offer-price">20 000 — 60 000 € HT</p>
-    <p class="offer-price-label">2 à 6 mois · sur devis</p>
+    <p class="offer-price">Sur devis</p>
+    <p class="offer-price-label">2 à 6 mois selon contexte</p>
+  </div>
+  <div class="offer-card reveal">
+    <span class="offer-tag">Niveau 4</span>
+    <h3 class="offer-title">Suivi et Pérennisation</h3>
+    <p class="offer-desc">
+      Une fois le projet stabilisé, ancrer les pratiques et sécuriser la dynamique dans la durée.
+    </p>
+    <ul class="offer-deliverables">
+      <li>Feuilles de route mensuelles</li>
+      <li>Comptes rendus de suivi réguliers</li>
+      <li>Synthèses de clôture trimestrielles</li>
+      <li>Coaching des chefs de projet (optionnel)</li>
+    </ul>
+    <p class="offer-price">Sur devis</p>
+    <p class="offer-price-label">6 à 12 mois · récurrent</p>
   </div>
 </div>
 <div style="padding-bottom: 100px; background: var(--dark);"></div>
 
-<!-- ── AUDIENCE ── -->
 <section id="audience">
   <div class="section-header">
     <span class="section-index">03</span>
@@ -847,17 +788,17 @@
     <h3 class="audience-card-title">Nouveaux DSI / CTO / CPO</h3>
     <p class="audience-card-sub">Prise de poste récente · 0-6 mois</p>
     <p>
-      Vous héritez d'un portefeuille de projets dont vous découvrez progressivement l'état réel. 
-      Un audit des 100 premiers jours vous donne une baseline factuelle avant vos premières décisions stratégiques 
-      — et une lecture claire à présenter à votre direction.
+      Vous héritez d'un portefeuille de projets dont vous découvrez progressivement l'état réel.
+      Un audit des 100 premiers jours vous donne une baseline factuelle avant vos premières décisions
+      et une lecture claire à présenter à votre direction.
     </p>
   </div>
   <div class="audience-card reveal">
     <h3 class="audience-card-title">Directeurs de Programme</h3>
-    <p class="audience-card-sub">Programmes en cours · Enjeux >500K€</p>
+    <p class="audience-card-sub">Programmes en cours · Enjeux supérieurs à 500K€</p>
     <p>
-      Vous pilotez un ou plusieurs programmes critiques et souhaitez un regard externe indépendant 
-      avant un comité stratégique ou une revue de direction. 
+      Vous pilotez un ou plusieurs programmes critiques et souhaitez un regard externe indépendant
+      avant un comité stratégique ou une revue de direction.
       Je produis une analyse factuelle, sans parti pris interne.
     </p>
   </div>
@@ -865,30 +806,29 @@
     <h3 class="audience-card-title">Ingénieurs d'affaires ESN</h3>
     <p class="audience-card-sub">Missions régie · IDF · Disponible</p>
     <p>
-      Vous cherchez un profil PMO Senior ou Chef de Projet IT pour placer 
-      chez un client grand compte. Rothschild Martin Maurel, Allianz, 16 ans d'expérience, 
-      PRINCE2 certifié, bilingue FR/EN. TJM selon contexte mission.
+      Vous cherchez un profil PMO Senior ou Chef de Projet IT pour un client grand compte.
+      Rothschild Martin Maurel, Allianz, 16 ans d'expérience, PRINCE2 certifié, bilingue FR/EN.
+      TJM selon contexte mission.
     </p>
   </div>
   <div class="audience-card reveal">
     <h3 class="audience-card-title">Chefs de Projet</h3>
     <p class="audience-card-sub">Signal faible · Besoin de recul</p>
     <p>
-      Vous sentez que votre projet accumule des tensions qui ne remontent pas encore 
-      au comité de pilotage. Le diagnostic flash gratuit (2h) permet d'identifier les signaux 
+      Vous sentez que votre projet accumule des tensions qui ne remontent pas encore
+      au comité de pilotage. Le diagnostic flash gratuit permet d'identifier les signaux
       critiques et de décider si une escalade est nécessaire.
     </p>
   </div>
 </div>
 
-<!-- ── METHOD ── -->
-<section id="method" style="padding-bottom: 0;">
+<section id="method" style="padding-bottom: 0; background: var(--dark);">
   <div class="section-header">
     <span class="section-index">04</span>
     <h2 class="section-title">La méthode<br><em>M.A.A.I.A.N.</em></h2>
   </div>
 </section>
-<div class="method-steps reveal" style="background: var(--dark);">
+<div class="method-steps reveal" style="background: var(--border);">
   <div class="method-step">
     <span class="method-letter">M</span>
     <span class="method-word">Mapping</span>
@@ -897,7 +837,7 @@
   <div class="method-step">
     <span class="method-letter">A</span>
     <span class="method-word">Alignement</span>
-    <p class="method-desc">Réalignement des parties prenantes. Clarification des rôles, attentes, et priorités.</p>
+    <p class="method-desc">Réalignement des parties prenantes. Clarification des rôles, attentes et priorités.</p>
   </div>
   <div class="method-step">
     <span class="method-letter">A</span>
@@ -922,7 +862,6 @@
 </div>
 <div style="height: 100px; background: var(--dark);"></div>
 
-<!-- ── CTA ── -->
 <section id="contact">
   <div class="cta-title">
     Un échange de<br>
@@ -931,41 +870,34 @@
   </div>
   <div class="cta-body">
     <p>
-      Vous êtes en prise de poste, en charge d'un programme critique, 
+      Vous êtes en prise de poste, en charge d'un programme critique,
       ou vous cherchez un profil PMO Senior pour une mission en régie.
     </p>
     <p>
-      <strong>En 30 minutes</strong>, je vous donne une lecture concrète de votre situation 
+      <strong>En 30 minutes</strong>, je vous donne une lecture concrète de votre situation
       et des repères sur ce qu'une intervention peut apporter dans votre contexte.
     </p>
-    <p>
-      Échange confidentiel. Pas de pitch commercial.
-    </p>
+    <p>Échange confidentiel. Pas de pitch commercial.</p>
     <div class="cta-actions">
-      <a href="https://calendly.com/a-rguibi-maaian/30min" target="_blank" class="btn-primary" style="display: inline-block; width: fit-content;">Réserver un créneau</a>
-      <span class="cta-info">Ou directement : <a href="mailto:a.rguibi@outlook.com" style="color: var(--light); text-decoration: none;">a.rguibi@outlook.com</a> · +33 6 59 34 56 55</span>
+      <a href="https://calendly.com/a-rguibi-maaian/30min" target="_blank" class="btn-primary" style="width: fit-content;">Réserver un créneau</a>
+      <span class="cta-info">Ou directement : a.rguibi@outlook.com · +33 6 59 34 56 55</span>
     </div>
   </div>
 </section>
 
-<!-- ── FOOTER ── -->
 <footer>
   <span class="footer-brand">MAAIAN</span>
   <ul class="footer-links">
     <li><a href="mailto:a.rguibi@outlook.com">Contact</a></li>
     <li><a href="https://www.linkedin.com/in/ahmedrguibi" target="_blank">LinkedIn</a></li>
-    <li><a href="https://www.maaian.fr/en">EN</a></li>
   </ul>
   <span class="footer-legal">Ahmed Rguibi — MAAIAN · Île-de-France</span>
 </footer>
 
 <script>
-  // Scroll reveal
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('visible');
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
